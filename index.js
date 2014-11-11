@@ -22,7 +22,7 @@ var voteData = {
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-	res.sendfile(__dirname + '/static/index.html');
+	res.sendfile(__dirname + '/public/index.html');
 });
 
 io.on('connection', function(socket){
@@ -37,6 +37,17 @@ io.on('connection', function(socket){
 
 		for(var key in voteData) {
 			voteData[key].percentage = (voteData[key].votes / voteTotal) * 100;
+		}
+
+		io.emit('vote results', voteData);
+	});
+
+	socket.on('reset votes', function(data) {
+		voteTotal = 0;
+		for (key in voteData) {
+			for (detail in voteData[key]) {
+				voteData[key][detail] = 0;
+			}
 		}
 
 		io.emit('vote results', voteData);

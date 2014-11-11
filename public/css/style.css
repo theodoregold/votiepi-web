@@ -53,12 +53,13 @@ body, img {  /* Resizing Transitions, for Responsive demo */
 .column {
 	height: 100%;
 	font-size: 120px;
-	width: 33.33%;
+	width: 0px;
 	color: #fff;
 	text-align: center;
 	line-height: 100%;
 	float: left;
 	position: relative;
+	overflow: hidden;
 	transition: width 0.4s ease-in-out 0s;
 }
 .column a {
@@ -129,10 +130,10 @@ ul#admin li a {
 	display: block;
 	color: #fff;
 }
-.graph, .back {
+.graph, .back, .reset {
 	width: 50px;
 }
-.hidden .total, .hidden .back {
+.hidden .total, .hidden .back, .hidden .reset {
 	opacity: 0;
 	visibility: hidden;
 }

@@ -1,4 +1,4 @@
-var socket = io.connect('http://vote.teodors.lv');
+var socket = io();
 
 var redColumn = $(".column.red"),
     yellowColumn = $(".column.yellow"),
@@ -64,6 +64,12 @@ $("#admin .graph").click(function(e) {
     e.preventDefault();
 
     $("#wrapper").toggleClass("hidden");
+});
+
+$("#admin .reset").click(function(e) {
+    e.preventDefault();
+
+    socket.emit("reset votes", true);
 });
 
 var animationTime = {
