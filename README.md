@@ -4,6 +4,9 @@ A very simple SPA voting system for conferences and other alike events. Simply c
 ### Getting started
 Just run `node install` to get dependencies and then `node index.js` to start.
 
+### Demo
+See it in action [vote.teodors.lv](http://vote.teodors.lv).
+
 ### Features
  * Responsive design for your smart devices
  * Real-time results with Socket.IO (awesome)
