@@ -1,0 +1,18 @@
+/*  TEAM  */
+    Creator:            Teodors Zeltiņš
+    Twitter:            @TeodorsZeltins
+    Author URL:         http://teodors.lv
+    Location:           Latvia, Riga
+
+/*  SITE  */
+    Name:               Teodors Zeltiņš
+    Site URL:           http://teodors.lv
+    Standards:          HTML5, CSS3
+    Components:         Modernizr, jQuery
+    Software:           Ubuntu Linux, PHP
+    Developed by 
+    consuming 
+    large portions of:  Ice Cream
+
+
+                    
