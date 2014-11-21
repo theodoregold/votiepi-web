@@ -81,8 +81,11 @@ body, img {  /* Resizing Transitions, for Responsive demo */
 	text-align: center;
 	margin: -56px 0 0 0;
 }
-.column .no-space i,  .column .no-space span {
+.column .no-space i, .column .no-space span {
 	display: none;
+}
+#wrapper.hidden .column .no-space i {
+	display: block;
 }
 .column span {
 	font-size: 24px;

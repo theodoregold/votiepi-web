@@ -33,6 +33,18 @@ var recursiveCheck = function(voteColor) {
     }, 500);
 }
 
+var recalculateWidth = function() {
+    $(".column").each(function() {
+        var columnEl = $(this).find("i");
+        columnEl.css("width", "auto");
+
+        if($(this).width() < columnEl.width() + 20) $(this).find("a").addClass("no-space");
+        else $(this).find("a").removeClass("no-space");
+
+        columnEl.css("width","100%");
+    });
+}
+
 var newVote = function(data) {
     redColumn.css("width", data.red.percentage + "%");
     redColumn.find("span").text(Math.round(data.red.percentage) + "%");
@@ -45,15 +57,7 @@ var newVote = function(data) {
 
     total.text(data.red.votes + data.yellow.votes + data.green.votes);
 
-    $(".column").each(function() {
-        var columnEl = $(this).find("i");
-        columnEl.css("width","auto")
-
-        if($(this).width() < columnEl.width() + 20) $(this).find("a").addClass("no-space");
-        else $(this).find("a").removeClass("no-space");
-
-        columnEl.css("width","100%");
-    });
+    recalculateWidth();
 }
 
 window.addEventListener('load', function() {
@@ -77,6 +81,7 @@ var animationTime = {
     "yellow" : 0,
     "green" : 0
 };
+
 var $reference = {};
 $(".column a").click(function(e) {
     e.preventDefault();
